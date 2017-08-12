@@ -19,15 +19,3 @@ body {
 .img-medium {
     height: 200px;
 }
-.content{
-    font-family: TimesNewRomen;
-    background-color: lightgrey;
-}
-.title{
-    font-family: TimesNewRomen;
-    background-color: lightyellow;
-}
-.para{
-    font-family: TimesNewRomen;
-    background-color: lightgreen;
-}
