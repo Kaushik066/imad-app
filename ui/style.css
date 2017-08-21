@@ -30,6 +30,7 @@ body {
     font-family: TimesNewRomen;
     background-color: #ece1e1;
     margin: 0 auto;
+    padding-left: 20px;
     
    
 }
@@ -37,6 +38,7 @@ body {
     font-family: TimesNewRomen;
     background-color: #FFEB3B;
     margin: 0 auto;
+    font-size: 150%;
     
     
 }
@@ -44,5 +46,6 @@ body {
    font-family: TimesNewRomen;
     background-color: lightgreen;
     margin: 0 auto;
+    padding-left: 40px;
     
 }
