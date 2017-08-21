@@ -10,7 +10,7 @@ button.onclick = function(){
     requesst.onreadystagechange=function(){
         if(request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
-                var counter = responceText;
+                var counter = request.responceText;
                 var span = document.getElementById('count');
                 span.innerHTML = counter.toString();
             }
