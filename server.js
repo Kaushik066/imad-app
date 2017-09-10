@@ -4,7 +4,7 @@ var path = require('path');
 var counter=0;
 var app = express();
 var crypto = require('crypto');
-var Pool = requir('pg').Pool;
+var Pool = require('pg').Pool;
 var bodyParser = requir('body-parser');
 
 var config = {
