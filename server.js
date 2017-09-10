@@ -5,7 +5,7 @@ var counter=0;
 var app = express();
 var crypto = require('crypto');
 var Pool = require('pg').Pool;
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 
 var config = {
   user: 'masterkaushikrao',
@@ -17,23 +17,23 @@ var config = {
 
 var app=express();
 app.use(morgan('combined'));
-app.use(bodyParser.JSON);
+//app.use(bodyParser.JSON);
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-function hash(input,salt){
+//function hash(input,salt){
     var hashed = crypto.pbkdf2Sync(input , salt, 100000, 512, 'sha512');
     return ['pbkdf2' , '100000', salt, hashed.toString('hex')].join('$');
 }
 
-app.get('/hash/:input',function(req,res){
+//app.get('/hash/:input',function(req,res){
     var hashedString = hash(req.params.input,'this-is-some-random-string');
     res.send(hashedString);
 });
 
-app.post('/cresate-user', function (req, res) {
+//app.post('/cresate-user', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
     var salt = crypto.getRandomBytes(128).toString('hex');
