@@ -17,7 +17,7 @@ var config = {
 
 var app=express();
 app.use(morgan('combined'));
-app.use(bodyparser.JSON);
+app.use(bodyParser.JSON);
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
