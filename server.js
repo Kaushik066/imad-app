@@ -5,7 +5,7 @@ var counter=0;
 var app = express();
 var crypto = require('crypto');
 var Pool = require('pg').Pool;
-var bodyParser = requir('body-parser');
+var bodyParser = require('body-parser');
 
 var config = {
   user: 'masterkaushikrao',
