@@ -19,6 +19,32 @@ var app=express();
 app.use(morgan('combined'));
 //app.use(bodyParser.JSON);
 
+var articles = {
+    articleOne: {
+       title:'Artical One',
+       heading:'Article One',
+       date:'05/05/2017',
+       content:`
+            <h3 > Welcome to Artical one</h3>
+            <p1>This is my web application</p1>
+    `},
+    articleTwo: {
+       title:'Artical Two',
+       heading:'Article Two',
+       date:'06/05/2017',
+       content:`
+            <h3 > Welcome to Artical Two</h3>
+            <p1>hello</p1>
+    `},
+    articleThree: {
+       title:'Artical Three',
+       heading:'Article Three',
+       date:'05/05/2017',
+       content:`
+            <h3 > Welcome to Artical Three</h3>
+            <p1>How are you</p1>
+    `},
+};
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
