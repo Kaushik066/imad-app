@@ -7,13 +7,13 @@ var crypto = require('crypto');
 var Pool = require('pg').Pool;
 //var bodyParser = require('body-parser');
 
-var config = {
+/*var config = {
   user: 'masterkaushikrao',
   database: 'masterkaushikrao',
   host: 'db.imad.hasura-app.io',
   port: '5432',
   password: process.env.DB_PASSWORD
-};
+};*/
 
 var app=express();
 app.use(morgan('combined'));
