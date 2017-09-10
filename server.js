@@ -20,7 +20,7 @@ app.use(morgan('combined'));
 //app.use(bodyParser.JSON);
 
 var articles = {
-    articleOne: {
+    'article-one': {
        title:'Artical One',
        heading:'Article One',
        date:'05/05/2017',
@@ -28,7 +28,7 @@ var articles = {
             <h3 > Welcome to Artical one</h3>
             <p1>This is my web application</p1>
     `},
-    articleTwo: {
+    'article-two': {
        title:'Artical Two',
        heading:'Article Two',
        date:'06/05/2017',
@@ -36,14 +36,14 @@ var articles = {
             <h3 > Welcome to Artical Two</h3>
             <p1>hello</p1>
     `},
-    articleThree: {
+    'article-three': {
        title:'Artical Three',
        heading:'Article Three',
        date:'05/05/2017',
        content:`
             <h3 > Welcome to Artical Three</h3>
             <p1>How are you</p1>
-    `},
+    `}
 };
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -114,16 +114,9 @@ app.get('/articles/:articleName',function(req,res){
     }); 
 });
 
-app.get('/article-one',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
-});
-
-app.get('/article-two',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articleName',function(req,res){
+    var articleName = request.params.articalName;
+    res.send(createTemplate(Articles[articleName]));
 });
 
 app.get('/counter',function(req,res){
