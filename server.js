@@ -116,7 +116,7 @@ app.get('/articles/:articleName',function(req,res){
 
 app.get('/:articleName',function(req,res){
     var articleName = request.params.articalName;
-    res.send(createTemplate(Articles[articleName]));
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/counter',function(req,res){
