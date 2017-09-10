@@ -5,8 +5,15 @@ var counter=0;
 var app = express();
 var crypto = require('crypto');
 var pool = requir('pg').Pool;
-
 var bodyParser = requir('body-parser');
+
+var config = {
+  user: 'masterkaushikrao',
+  database: 'masterkaushikrao',
+  host: 'db.imad.hasura-app.io',
+  port: '5432',
+  password: process.env.DB_PASSWORD
+};
 
 var app=express();
 app.use(morgan('combined'));
