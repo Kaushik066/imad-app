@@ -7,13 +7,13 @@ var crypto = require('crypto');
 var Pool = require('pg').Pool;
 //var bodyParser = require('body-parser');
 
-/*var config = {
+var config = {
   user: 'masterkaushikrao',
   database: 'masterkaushikrao',
   host: 'db.imad.hasura-app.io',
   port: '5432',
   password: process.env.DB_PASSWORD
-};*/
+};
 
 var app=express();
 app.use(morgan('combined'));
@@ -24,26 +24,23 @@ var articles = {
        title:'Artical One',
        heading:'Article One',
        date:'05/05/2017',
-       content:`
-            <h3 > Welcome to Artical one</h3>
-            <p1>This is my web application</p1>
-    `},
+       },
     'article-two': {
        title:'Artical Two',
        heading:'Article Two',
        date:'06/05/2017',
-       content:`
+       /*content:`
             <h3 > Welcome to Artical Two</h3>
             <p1>hello</p1>
-    `},
+    `*/},
     'article-three': {
        title:'Artical Three',
        heading:'Article Three',
        date:'05/05/2017',
-       content:`
+       /*content:`
             <h3 > Welcome to Artical Three</h3>
             <p1>How are you</p1>
-    `}
+    `*/}
 };
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -75,9 +72,9 @@ app.post('/cresate-user', function (req, res) {
       }
   });
 });
-
 */
-var pool = new Pool(config);
+
+var pool = new pool(config);
 app.get('/test-db', function (req, res){
     pool.query('SELECT * FROM test', function(err,result){
       if(err){
