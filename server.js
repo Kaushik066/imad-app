@@ -139,13 +139,15 @@ function createTemplate (data){
             <link href="/ui/style.css" rel="stylesheet" />
         </head>
         <body>
-            <div>
+            <div class="container">
                 <div><a href="/">Home</a></div>
                 <hr/>
-                <h3 class="title">${heading}</h3>
-                <div class="para">${date.toDateString()}</div>
+                <h3>${heading}</h3>
+                <div>
+                    ${date.toDateString()}
+                </div>
                 <hr/>
-                <div class="content">${content}</div>
+                <div>${content}</div>
             </div>
         </body>
     </html>
