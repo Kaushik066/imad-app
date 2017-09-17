@@ -18,7 +18,7 @@ var config = {
 var app=express();
 app.use(morgan('combined'));
 //app.use(bodyParser.JSON);
-
+/*
 var articles = {
     'article-one': {
        title:'Artical One',
@@ -29,19 +29,20 @@ var articles = {
        title:'Artical Two',
        heading:'Article Two',
        date:'06/05/2017',
-       /*content:`
+       content:`
             <h3 > Welcome to Artical Two</h3>
             <p1>hello</p1>
-    `*/},
+    `},
     'article-three': {
        title:'Artical Three',
        heading:'Article Three',
        date:'05/05/2017',
-       /*content:`
+       content:`
             <h3 > Welcome to Artical Three</h3>
             <p1>How are you</p1>
-    `*/}
+    `}
 };
+*/
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -74,9 +75,9 @@ app.post('/cresate-user', function (req, res) {
 });
 */
 
-var Pool = new Pool(config);
+var pool = new Pool(config);
 app.get('/test-db', function (req, res){
-    Pool.query('SELECT * FROM test', function(err,result){
+    pool.query('SELECT * FROM test', function(err,result){
       if(err){
         res.status(500).send(err.toString());
           
@@ -96,7 +97,8 @@ app.get('/ui/madi.png', function (req, res) {
 */
 
 app.get('/articles/:articleName',function(req,res){
-   Pool.query("SELECT * FROM article WHERE title = '"+ req.params.articleName +"'",function(err,result){
+    //var articleName = req.params.articleName;
+   pool.query("SELECT * FROM article WHERE title = '"+ req.params.articleName +"'",function(err,result){
       if(err){
         res.status(500).send(err.toString());
           
